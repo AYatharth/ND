@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nagpur Drycleaners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ffdab9; /* Peach background */
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #ffcc99, 0 0 10px #ffcc99, 0 0 20px #ffcc99;
+        }
+
+        .holographic {
+            background: linear-gradient(45deg, rgba(255, 250, 240, 0.3), rgba(255, 245, 230, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .holographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.4); /* Teal hover shadow */
+            border-color: #ffffff;
+        }
+
+        .glow-button-book {
+            background: linear-gradient(45deg, #ffcc99, #ffb347);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .glow-button-book:hover {
+            box-shadow: 0 0 15px #ffcc99, 0 0 30px #ffb347;
+            transform: scale(1.05);
+        }
+
+        .glow-button-contact {
+            background: linear-gradient(45deg, #ffdab9, #ffcc99);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .glow-button-contact:hover {
+            box-shadow: 0 0 15px #ffdab9, 0 0 30px #ffcc99;
+            transform: scale(1.05);
+        }
+
+        .teal-button {
+            background: linear-gradient(45deg, #20c997, #20c997);
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .teal-button:hover {
+            box-shadow: 0 0 15px #20c997, 0 0 30px #20c997;
+            transform: scale(1.05);
+        }
+
+        .header-nav-item {
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav-item:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .slide-in-left, .slide-in-right {
+                transform: translateX(0); /* Disable horizontal slide on small screens */
+            }
+        }
+    </style>
+</head>
+<body class="bg-peach">
+    <header class="holographic py-4 sticky top-0 z-50" style="background-color: rgba(255, 218, 185, 0.8);">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold neon-text font-['Orbitron']">Nagpur Drycleaners</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="header-nav-item">Home</a></li>
+                    <li><a href="services.html" class="header-nav-item">Services</a></li>
+                    <li><a href="book.html" class="header-nav-item">Book</a></li>
+                    <li><a href="contact.html" class="header-nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-10 px-4">
+        <h1 class="text-3xl font-bold neon-text text-center mb-8 font-['Orbitron']">Contact Us</h1>
+
+        <section class="holographic p-6 rounded-lg shadow-md space-y-4" style="background-color: #ffc0cb;">
+            <h2 class="text-2xl font-bold neon-text mb-4">Get in Touch</h2>
+            <p class="text-gray-700">Have questions or need assistance? Reach out to us, and we'll ensure your wardrobe gets the shine it deserves!</p>
+            <div class="space-y-2">
+                <p><strong>Email:</strong> <a href="mailto:info@nagpurdrycleaners.com" class="text-blue-600 hover:text-blue-800">info@nagpurdrycleaners.com</a></p>
+                <p><strong>Phone:</strong> +91 755-123-4567</p>
+                <p><strong>Address:</strong> Nagpur Drycleaners, Zone 1, MP Nagar, Bhopal, Madhya Pradesh 462011</p>
+            </div>
+        </section>
+
+        <section class="mt-8 holographic p-6 rounded-lg shadow-md space-y-4" style="background-color: #ffc0cb;">
+            <h2 class="text-2xl font-bold neon-text mb-4">Send Us a Message</h2>
+            <form action="#" method="post" class="space-y-4">
+                <div>
+                    <label for="full_name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address:</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Your Message:</label>
+                    <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="teal-button w-full py-3 px-6 rounded-full text-lg font-bold focus:outline-none focus:shadow-outline">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="py-6 text-center holographic" style="background-color: rgba(255, 218, 185, 0.8);">
+        <p>© 2125 Nagpur Drycleaners. All rights reserved.</p>
+    </footer>
+</body>
+</html>
