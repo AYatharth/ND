@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Service - Nagpur Drycleaners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ffdab9;
+            color: #000000;
+            overflow-x: hidden;
+        }
+        .neon-text {
+            text-shadow: 0 0 5px #ffcc99, 0 0 10px #ffcc99, 0 0 20px #ffcc99;
+        }
+        .holographic {
+            background: linear-gradient(45deg, rgba(255, 250, 240, 0.3), rgba(255, 245, 230, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .holographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.4);
+            border-color: #ffffff;
+        }
+        .glow-button-book {
+            background: linear-gradient(45deg, #ffcc99, #ffb347);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .glow-button-book:hover {
+            box-shadow: 0 0 15px #ffcc99, 0 0 30px #ffb347;
+            transform: scale(1.05);
+        }
+        .glow-button-contact {
+            background: linear-gradient(45deg, #ffdab9, #ffcc99);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .glow-button-contact:hover {
+            box-shadow: 0 0 15px #ffdab9, 0 0 30px #ffcc99;
+            transform: scale(1.05);
+        }
+        .teal-button {
+            background: linear-gradient(45deg, #20c997, #20c997);
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .teal-button:hover {
+            box-shadow: 0 0 15px #20c997, 0 0 30px #20c997;
+            transform: scale(1.05);
+        }
+        .glowing-text {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+        .header-nav-item {
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+        .header-nav-item:hover {
+            color: #ffffff;
+        }
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        .nav-menu {
+            transition: all 0.3s ease;
+        }
+        /* Mobile-Specific Styles */
+        @media (max-width: 768px) {
+            /* Hamburger Menu */
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 218, 185, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .nav-menu li {
+                width: 80%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .header-nav-item {
+                display: block;
+                padding: 0.75rem 1rem;
+                font-size: 1.125rem;
+                font-weight: 500;
+                border-radius: 0.5rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                width: 100%;
+                text-align: center;
+            }
+            .header-nav-item:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            /* Form Field Enhancements */
+            input, textarea, select {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+            /* Button Enhancements */
+            .teal-button {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+            }
+            /* Link Enhancements */
+            .text-md.text-blue-600 {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                display: inline-block;
+            }
+            /* Improve Text Readability */
+            .neon-text {
+                text-shadow: 0 0 3px #ffcc99, 0 0 6px #ffcc99;
+            }
+            /* Adjust Section Padding */
+            .holographic {
+                padding: 1.5rem;
+            }
+            /* Grid Adjustments */
+            .grid {
+                gap: 1.5rem;
+            }
+            /* Ensure Content Fits */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-peach">
+    <header class="holographic py-4 sticky top-0 z-50" style="background-color: rgba(255, 218, 185, 0.8);">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="log.PNG" alt="Nagpur Drycleaners Logo" class="h-10 w-10 mr-2 rounded-lg">
+                <h1 class="text-2xl font-bold neon-text font-['Orbitron']">Nagpur Drycleaners</h1>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="header-nav-item">Home</a></li>
+                    <li><a href="services.html" class="header-nav-item">Services</a></li>
+                    <li><a href="book.html" class="header-nav-item">Book</a></li>
+                    <li><a href="contact.html" class="header-nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-10 px-4">
+        <h1 class="text-3xl font-bold neon-text text-center mb-8 font-['Orbitron']">Book Your Service</h1>
+
+        <form action="#" method="post" class="holographic p-6 rounded-lg shadow-md space-y-4" style="background-color: #ffc0cb;">
+            <div>
+                <label for="full_name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div>
+                <label for="phone_number" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div>
+                <label for="email_address" class="block text-gray-700 text-sm font-bold mb-2">Email Address (Optional):</label>
+                <input type="email" id="email_address" name="email_address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div>
+                <label for="pickup_address" class="block text-gray-700 text-sm font-bold mb-2">Pickup Address:</label>
+                <textarea id="pickup_address" name="pickup_address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="pickup_date" class="block text-gray-700 text-sm font-bold mb-2">Preferred Pickup Date:</label>
+                    <input type="date" id="pickup_date" name="pickup_date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div>
+                    <label for="pickup_time" class="block text-gray-700 text-sm font-bold mb-2">Preferred Pickup Time:</label>
+                    <input type="time" id="pickup_time" name="pickup_time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+            </div>
+
+            <div>
+                <label for="service_type" class="block text-gray-700 text-sm font-bold mb-2">Type of Service:</label>
+                <select id="service_type" name="service_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="dry_cleaning">Dry Cleaning</option>
+                    <option value="laundry">Laundry</option>
+                    <option value="ironing">Ironing</option>
+                    <option value="stain_removal">Stain Removal</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="special_instructions" class="block text-gray-700 text-sm font-bold mb-2">Special Instructions (Optional):</label>
+                <textarea id="special_instructions" name="special_instructions" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+
+            <button type="submit" class="teal-button w-full py-3 px-6 rounded-full text-lg font-bold focus:outline-none focus:shadow-outline glowing-text">Confirm Booking</button>
+        </form>
+
+        <div class="mt-8 text-center">
+            <a href="index.html#services" class="text-md text-blue-600 hover:text-blue-800 visited:text-purple-600">→  See Price List</a>
+        </div>
+    </main>
+
+    <footer class="py-6 text-center holographic" style="background-color: rgba(255, 218, 185, 0.8);">
+        <p>© 2025 Nagpur Drycleaners. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.header-nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
