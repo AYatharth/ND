@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagpur Drycleaners - Your Style. Our Shine!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ffdab9; /* Peach background */
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #ffcc99, 0 0 10px #ffcc99, 0 0 20px #ffcc99;
+        }
+
+        .holographic {
+            background: linear-gradient(45deg, rgba(255, 250, 240, 0.3), rgba(255, 245, 230, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .holographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.4); /* Teal hover shadow */
+            border-color: #ffffff;
+        }
+
+        .glow-button-book {
+            background: linear-gradient(45deg, #ffcc99, #ffb347);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .glow-button-book:hover {
+            box-shadow: 0 0 15px #ffcc99, 0 0 30px #ffb347;
+            transform: scale(1.05);
+        }
+
+        .glow-button-contact {
+            background: linear-gradient(45deg, #ffdab9, #ffcc99);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .glow-button-contact:hover {
+            box-shadow: 0 0 15px #ffdab9, 0 0 30px #ffcc99;
+            transform: scale(1.05);
+        }
+
+        .hero-bg {
+            background: url('sut.jpg') no-repeat center center/cover;
+            background-position: center center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 218, 185, 0.3), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: #ffffff;
+        }
+
+        .header-nav-item {
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav-item:hover {
+            color: #ffffff;
+        }
+
+        /* Animation classes */
+        
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) { /* Medium screens and below (md breakpoint in Tailwind is 768px) */
+            .slide-in-left, .slide-in-right {
+                transform: translateX(0); /* Disable horizontal slide on small screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="holographic py-4 sticky top-0 z-50" style="background-color: rgba(255, 218, 185, 0.8);">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold neon-text font-['Orbitron']">Nagpur Drycleaners</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="header-nav-item">Home</a></li>
+                    <li><a href="services.html" class="header-nav-item">Services</a></li>
+                    <li><a href="book.html" class="header-nav-item">Book</a></li>
+                    <li><a href="contact.html" class="header-nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-bg py-32 relative">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl font-bold neon-text font-['Orbitron'] mb-4 hero-text">Your Style. Our Shine!</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto hero-text">Experience top-quality drycleaning with advanced technology, quick service, and convenient pick-up & drop-off. From traditional wear to formal attire, we clean it all!</p>
+            <a href="book.html" class="glow-button-book py-3 px-8 rounded-full text-lg">Book Now</a>
+        </div>
+    </section>
+
+    <section id="services" class="py-20" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold neon-text font-['Orbitron'] text-center mb-12 slide-in-right">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Traditional Wear</h3>
+                    <p style="color:#ffffff">Expert cleaning for kurtas, sarees, sherwanis, and Indo-Western outfits, preserving their intricate designs and fabrics.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Formal Attire</h3>
+                    <p style="color:#ffffff">Impeccable care for pant suits, blazers, tuxedos, and more, ensuring a crisp, professional look.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Accessories & More</h3>
+                    <p style="color:#ffffff">Specialized cleaning for shoes, bags, blankets, curtains, and carpets, keeping every detail spotless.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Deep Clean</h3>
+                    <p style="color:#ffffff">Advanced deep cleaning for tough stains and heavy fabrics, restoring items to their original glory.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Pickup and Delivery</h3>
+                    <p style="color:#ffffff">Convenient pickup and delivery services, bringing our high-quality dry cleaning directly to your doorstep.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Special Services</h3>
+                    <p style="color:#ffffff">Super quick and urgent cleaning for special clients, with pick-up and drop-off at your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="outlets" class="py-20 bg-gradient-to-b from-transparent to-[#1f2937]" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold neon-text font-['Orbitron'] text-center mb-12 slide-in-left">Our Outlets in Bhopal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #ffc0cb;">
+                    <h3 class="text-xl font-bold mb-2 text-peach">MP Nagar</h3>
+                    <p class="text-peach mb-2">Shop No-102, Jyoti Shopping Complex, Near Jyoti Cineplex, Zone 1, M P Nagar-462011.</p>
+                    <p class="text-peach">Phone:</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #ffc0cb;">
+                    <h3 class="text-xl font-bold mb-2 text-peach">New Market</h3>
+                    <p class="text-peach mb-2">Shop No-10, New Market, STT Nagar, TT Nagar, Bhopal, Madhya Pradesh 462003.</p>
+                    <p class="text-peach">Phone:</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #ffc0cb;">
+                    <h3 class="text-xl font-bold mb-2 text-peach">Arera Colony</h3>
+                    <p class="text-peach mb-2">Shop No-1, Cpa Shopping Center, Bittan Market, E5, Bhopal, Near Hakim Hotel, Arera Colony-462016.</p>
+                    <p class="text-peach">Phone:</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #ffc0cb;">
+                    <h3 class="text-xl font-bold mb-2 text-peach">Chunna Bhatti</h3>
+                    <p class="text-peach mb-2">Chunabhatti Chouraha, Opposite Kali Mandir, Kolar Road, Chunabhatti, Bhopal - 462016.</p>
+                    <p class="text-peach">Phone:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="py-20" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold neon-text font-['Orbitron'] text-center mb-12 slide-in-right">About Us</h2>
+            <p class="text-lg text-gray-700 leading-relaxed slide-in-left">
+                With over 60 years of trust, Nagpur Drycleaners is Bhopal’s go-to name for top-quality drycleaning. We combine expert craftsmanship with advanced technology to care for everything — from traditional wear and formal suits to shoes, bags, carpets, and curtains.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mt-4 slide-in-right">
+                Offering quick, affordable services with doorstep pickup and delivery, we make premium care effortless. For urgent needs, our special express service ensures fast turnaround without compromising on quality.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mt-4 slide-in-left">
+                At Nagpur Drycleaners, your garments and essentials are in the best hands — always.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gradient-to-b from-transparent to-[#1f2937]" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold neon-text font-['Orbitron'] mb-8 slide-in-right">Get in Touch</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto slide-in-left" style="color: #ffffff">Ready to give your wardrobe the shine it deserves? Contact us for affordable, high-quality drycleaning services!</p>
+            <a href="contact.html" class="glow-button-contact py-3 px-8 rounded-full text-lg slide-in-right">Contact Us</a>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center holographic" style="background-color: rgba(255, 218, 185, 0.8);">
+        <p>© 2025 Nagpur Drycleaners. All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+    </script>
+</body>
+</html>
