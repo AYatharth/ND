@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Nagpur Drycleaners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ffdab9; /* Peach background */
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #ffcc99, 0 0 10px #ffcc99, 0 0 20px #ffcc99;
+        }
+
+        .holographic {
+            background: linear-gradient(45deg, rgba(255, 250, 240, 0.3), rgba(255, 245, 230, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease 0.1s, box-shadow 0.3s ease 0.1s, border-color 0.3s ease 0.1s;
+        }
+
+        .holographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.4); /* Teal hover shadow */
+            border-color: #ffffff;
+        }
+
+        .glow-button-book {
+            background: linear-gradient(45deg, #ffcc99, #ffb347);
+            border: none;
+            color: #1f2937;
+            font-weight: bold;
+            transition: transform 0.3s ease 0.1s, box-shadow 0.3s ease 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .glow-button-book:hover {
+            box-shadow: 0 0 15px #ffcc99, 0 0 30px #ffb347, 0 6px 8px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
+        }
+
+        .header-nav-item {
+            color: #000000;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .header-nav-item:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .header-nav-item:focus {
+            outline: 2px solid #ffcc99;
+            outline-offset: 2px;
+        }
+
+        /* Slide-in hover animations from index.html */
+        .slide-in-left:hover {
+            transform: translateX(-8px);
+            box-shadow: 0 0 10px rgba(255, 204, 153, 0.5);
+        }
+
+        .slide-in-right:hover {
+            transform: translateX(8px);
+            box-shadow: 0 0 10px rgba(255, 204, 153, 0.5);
+        }
+
+        /* Hover animation for section headers */
+        .section-header:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px #ffcc99, 0 0 20px #ffcc99;
+        }
+
+        /* Hover animation for logo image */
+        .logo-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 204, 153, 0.7);
+        }
+
+        /* Remove hover animation for #hero section paragraph */
+        #hero .slide-in-left:hover {
+            transform: none; /* No slide */
+            box-shadow: none; /* No glow */
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hidden-service {
+            display: none;
+        }
+
+        /* Mobile-Specific Styles */
+        @media (max-width: 768px) {
+            .slide-in-left, .slide-in-right {
+                transform: translateX(0); /* Disable horizontal slide on small screens */
+            }
+
+            .slide-in-left:hover, .slide-in-right:hover {
+                transform: none; /* No slide on mobile hover */
+                box-shadow: 0 0 10px rgba(255, 204, 153, 0.5); /* Keep glow */
+            }
+
+            /* Remove hover animation for #hero section paragraph on mobile */
+            #hero .slide-in-left:hover {
+                transform: none; /* No slide */
+                box-shadow: none; /* No glow */
+            }
+
+            /* Hamburger Menu */
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 218, 185, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-menu li {
+                width: 80%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .header-nav-item {
+                display: block;
+                padding: 0.75rem 1rem;
+                font-size: 1.125rem;
+                font-weight: 500;
+                border-radius: 0.5rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-nav-item:hover, .header-nav-item:active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            /* Button Enhancements */
+            .glow-button-book {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+            }
+
+            /* Text Readability */
+            .neon-text {
+                text-shadow: 0 0 3px #ffcc99, 0 0 6px #ffcc99;
+            }
+
+            /* Adjust Section Padding */
+            .holographic {
+                padding: 1.5rem;
+            }
+
+            /* Hero Section */
+            #hero {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+
+            #hero h2 {
+                font-size: 2.5rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            /* Grid Adjustments */
+            .grid {
+                gap: 1.5rem;
+            }
+
+            /* Special Offers */
+            #special-offers .flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Ensure Content Fits */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="holographic py-4 sticky top-0 z-50" style="background-color: rgba(255, 218, 185, 0.8);" data-aos="fade-down">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="log.png" alt="Nagpur Drycleaners Logo" class="h-10 w-10 mr-2 rounded-lg logo-img">
+                <h1 class="text-2xl font-bold neon-text font-['Orbitron']">Nagpur Drycleaners</h1>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="header-nav-item">Home</a></li>
+                    <li><a href="services.html" class="header-nav-item">Services</a></li>
+                    <li><a href="book.html" class="header-nav-item">Book</a></li>
+                    <li><a href="contact.html" class="header-nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="py-20" style="background-image: url('ger.jpg'); background-size: cover; background-position: center; background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold neon-text font-['Orbitron'] text-white mb-4 section-header" data-aos="fade-up">Our Services</h2>
+            <p class="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto text-white slide-in-left" data-aos="fade-up" data-aos-delay="100">
+                At Nagpur Drycleaners, we offer a wide range of premium dry cleaning services tailored to your needs. From delicate traditional wear to everyday essentials, our advanced technology and expert care ensure your items shine.
+            </p>
+            <a href="book.html" class="glow-button-book py-3 px-8 rounded-full text-lg text-black slide-in-right" data-aos="zoom-in" data-aos-delay="200">Book Now</a>
+        </div>
+    </section>
+
+    <section id="services-list" class="py-20" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Traditional Wear</h3>
+                    <p style="color:#ffffff">We specialize in cleaning delicate traditional garments like kurtas, sarees, sherwanis, and Indo-Western outfits. Our gentle cleaning methods preserve intricate embroidery and delicate fabrics, ensuring your attire stays vibrant, fresh, and perfectly maintained.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Formal Attire</h3>
+                    <p style="color:#ffffff">From business suits to tuxedos, we provide expert cleaning for formal wear, maintaining a crisp and polished look. Whether for business meetings or special events, our careful attention to detail ensures your attire remains immaculate, ready for any occasion.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Accessories & More</h3>
+                    <p style="color:#ffffff">We clean a wide range of accessories and household items, including shoes, bags, blankets, curtains, and carpets. Our specialized cleaning techniques restore their original look, removing stains and odors while ensuring every detail is handled with care and precision.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Upholstery & Furnishing Cleaning</h3>
+                    <p style="color:#ffffff">We offer professional cleaning services for home and car furnishings, such as sofas, armchairs, cushions, throws, pillows, and car seats. Our gentle yet effective cleaning methods eliminate dust, stains, and odors, keeping your furniture and vehicle interiors looking fresh and well-maintained.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-left" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Pickup and Delivery</h3>
+                    <p style="color:#ffffff">Our convenient pickup and delivery service ensures a hassle-free dry cleaning experience. We collect your items and return them freshly cleaned, saving you time and offering the convenience of high-quality care right at your doorstep.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg slide-in-right" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Express Service</h3>
+                    <p style="color:#ffffff">For urgent cleaning needs, our express service offers fast turnaround with quick pickup and drop-off. We maintain high standards even under tight schedules, ensuring your items are cleaned efficiently and promptly without compromising on quality.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg hidden-service slide-in-left" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="700">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Commercial Laundry & Dry Cleaning</h3>
+                    <p style="color:#ffffff">We provide top-tier laundry and dry cleaning services for businesses like hotels, restaurants, and corporate offices. From linens to uniforms, we ensure all textiles are cleaned to the highest standards, helping businesses maintain a professional and polished appearance.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg hidden-service slide-in-right" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="800">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Steam Cleaning</h3>
+                    <p style="color:#ffffff">Our steam cleaning service uses high-temperature steam to deep clean and sanitize fabrics, upholstery, and carpets. This eco-friendly method removes dirt, stains, and bacteria without chemicals, leaving your items fresh and revitalized. Ideal for delicate fabrics and high-touch areas.</p>
+                </div>
+                <div class="holographic p-6 rounded-lg hidden-service slide-in-left" style="background-color: #008080;" data-aos="fade-up" data-aos-delay="900">
+                    <h3 class="text-2xl font-bold mb-4 neon-text" style="color:#ffffff">Pet Odor Removal</h3>
+                    <p style="color:#ffffff">Our pet odor removal service targets and neutralizes stubborn smells in fabrics like pet beds, clothing, upholstery, and carpets. Using safe, effective techniques, we ensure your items are not only odor-free but also deeply refreshed, providing a cleaner and more comfortable environment for you and your pets.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button id="view-all-button" class="glow-button-book py-3 px-8 rounded-full text-lg slide-in-right" data-aos="zoom-in" data-aos-delay="1000">View All <i class="material-icons">arrow_downward</i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="special-offers" class="py-20" style="background-color: rgba(255, 218, 185, 0.7);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-black font-['Orbitron'] mb-4 section-header" data-aos="fade-up">Special Offers</h2>
+            <p class="text-lg text-black text-center mb-8 max-w-3xl mx-auto slide-in-left" data-aos="fade-up" data-aos-delay="100">
+                Check out our exclusive deals and discounts!
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mt-6">
+                <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto holographic slide-in-left" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2 neon-text">First-Time Customer Discount</h4>
+                    <p class="text-gray-700">Get 15% off your first dry cleaning service! Welcome to Nagpur Drycleaners – your first step to pristine clothes.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto holographic slide-in-right" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2 neon-text">Bundle Offer</h4>
+                    <p class="text-gray-700">Save more when you clean more! Enjoy 20% off when you clean 5 or more items in a single order.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto holographic slide-in-left" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2 neon-text">Referral Program</h4>
+                    <p class="text-gray-700">Refer a friend and both of you get 10% off your next service. Sharing is caring – and rewarding!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center holographic" style="background-color: rgba(255, 218, 185, 0.8);" data-aos="fade-up">
+        <p>© 2025 Nagpur Drycleaners. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out',
+            disableMutationObserver: false
+        });
+
+        // Hamburger menu toggle for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.header-nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // View All button functionality
+        document.getElementById('view-all-button').addEventListener('click', function() {
+            const hiddenServices = document.querySelectorAll('.hidden-service');
+            hiddenServices.forEach(service => {
+                service.style.display = 'block';
+            });
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
